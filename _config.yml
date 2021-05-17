@@ -13,7 +13,7 @@ url: ""
 data_dir: data
 environment: staging
 
-remote_data_prefix: "https://ONSdigital.github.io/sdg-data"
+remote_data_prefix: "https://LucyGwilliamAdmin.github.io/sdg-data-sandpit"
 
 create_indicators:
   layout: indicator
@@ -51,9 +51,9 @@ email_contacts:
   functional: sustainabledevelopment@ons.gov.uk
 
 # Github Repo for Data
-repo_name: sdg-data
+repo_name: sdg-data-sandpit
 branch: develop
-org_name: ONSdigital
+org_name: LucyGwilliamAdmin
 
 # Build settings
 markdown: kramdown
