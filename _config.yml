@@ -151,7 +151,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@news-layout-post-margins
+remote_theme: brockfanning/open-sdg@back-to-top-styling
 
 # Apply any custom Javascript.
 custom_js:
