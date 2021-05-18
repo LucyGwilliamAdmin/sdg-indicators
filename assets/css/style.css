@@ -342,7 +342,9 @@ body.contrast-high .previous-next-links .btn span {
   box-shadow: 0 2px 0 #002d18;
   border-radius: 0;
   position: relative; }
-  .btn-download:hover, .btn-download:active {
+  .btn-download:active {
+    background: #005a30 !important; }
+  .btn-download:hover {
     background: #005a30 !important; }
   .btn-download:visited {
     color: white !important; }
@@ -386,10 +388,10 @@ h5 + .btn-download {
   float: left; }
 
 body.contrast-high .btn {
-  background: white !important;
+  background: #eeeeee !important;
   color: black !important; }
   body.contrast-high .btn:hover {
-    background: #FFDD00 !important; }
+    background: #DBDAD9 !important; }
   body.contrast-high .btn:focus {
     background: #ffdd00 !important; }
 body.contrast-high #zip-download-info {
@@ -1556,9 +1558,11 @@ body.contrast-high .navbar #menu-mobile li a {
   background-color: black; }
 body.contrast-high .navbar #search input, body.contrast-high .navbar #search-mobile input {
   color: black; }
-body.contrast-high .navbar #search button, body.contrast-high .navbar #search-mobile button {
-  background-color: #767676;
-  color: white; }
+body.contrast-high .navbar #search button, body.contrast-high .navbar #search button:focus, body.contrast-high .navbar #search-mobile button, body.contrast-high .navbar #search-mobile button:focus {
+  background-color: #eeeeee !important;
+  color: black !important; }
+body.contrast-high .navbar #search button:hover, body.contrast-high .navbar #search-mobile button:hover {
+  background-color: #DBDAD9 !important; }
 body.contrast-high .navbar .top-level > li.active button {
   color: black; }
 body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle {
@@ -1574,6 +1578,13 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   color: black; }
   body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a:hover {
     text-decoration: underline; }
+body.contrast-high .header-menu-left-aligned #search input, body.contrast-high .header-menu-left-aligned #search-mobile input {
+  color: black; }
+body.contrast-high .header-menu-left-aligned #search button, body.contrast-high .header-menu-left-aligned #search button:focus, body.contrast-high .header-menu-left-aligned #search-mobile button, body.contrast-high .header-menu-left-aligned #search-mobile button:focus {
+  background-color: #eeeeee !important;
+  color: black !important; }
+body.contrast-high .header-menu-left-aligned #search button:hover, body.contrast-high .header-menu-left-aligned #search-mobile button:hover {
+  background-color: #DBDAD9 !important; }
 @media screen and (max-width: 768px) {
   body.contrast-high .navbar.navbar-default {
     background: black;
@@ -2117,8 +2128,7 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
   color: #FFDD00; }
 
 .layout-news .post-listing {
-  clear: both;
-  margin-bottom: 25px; }
+  clear: both; }
   .layout-news .post-listing .post-categories {
     list-style-type: none; }
     .layout-news .post-listing .post-categories li {
@@ -2396,9 +2406,11 @@ body.contrast-high #search-results .search-result .content {
   color: white !important; }
 body.contrast-high #search-bar-on-page input {
   color: black; }
-body.contrast-high #search-bar-on-page button {
-  background-color: #767676;
-  color: white; }
+body.contrast-high #search-bar-on-page button, body.contrast-high #search-bar-on-page button:focus {
+  background-color: #eeeeee !important;
+  color: black !important; }
+body.contrast-high #search-bar-on-page button:hover {
+  background-color: #DBDAD9 !important; }
 
 body.contrast-high.layout-search form input, body.contrast-high.layout-search form label {
   color: black; }
