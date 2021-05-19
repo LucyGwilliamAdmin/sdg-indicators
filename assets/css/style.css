@@ -389,7 +389,8 @@ h5 + .btn-download {
 
 body.contrast-high .btn {
   background: #eeeeee !important;
-  color: black !important; }
+  color: black !important;
+  box-shadow: 0 2px 0 black; }
   body.contrast-high .btn:hover {
     background: #DBDAD9 !important; }
   body.contrast-high .btn:focus {
@@ -1560,7 +1561,8 @@ body.contrast-high .navbar #search input, body.contrast-high .navbar #search-mob
   color: black; }
 body.contrast-high .navbar #search button, body.contrast-high .navbar #search button:focus, body.contrast-high .navbar #search-mobile button, body.contrast-high .navbar #search-mobile button:focus {
   background-color: #eeeeee !important;
-  color: black !important; }
+  color: black !important;
+  border-color: black !important; }
 body.contrast-high .navbar #search button:hover, body.contrast-high .navbar #search-mobile button:hover {
   background-color: #DBDAD9 !important; }
 body.contrast-high .navbar .top-level > li.active button {
@@ -1582,7 +1584,8 @@ body.contrast-high .header-menu-left-aligned #search input, body.contrast-high .
   color: black; }
 body.contrast-high .header-menu-left-aligned #search button, body.contrast-high .header-menu-left-aligned #search button:focus, body.contrast-high .header-menu-left-aligned #search-mobile button, body.contrast-high .header-menu-left-aligned #search-mobile button:focus {
   background-color: #eeeeee !important;
-  color: black !important; }
+  color: black !important;
+  border-color: black !important; }
 body.contrast-high .header-menu-left-aligned #search button:hover, body.contrast-high .header-menu-left-aligned #search-mobile button:hover {
   background-color: #DBDAD9 !important; }
 @media screen and (max-width: 768px) {
@@ -2408,7 +2411,8 @@ body.contrast-high #search-bar-on-page input {
   color: black; }
 body.contrast-high #search-bar-on-page button, body.contrast-high #search-bar-on-page button:focus {
   background-color: #eeeeee !important;
-  color: black !important; }
+  color: black !important;
+  border-color: black !important; }
 body.contrast-high #search-bar-on-page button:hover {
   background-color: #DBDAD9 !important; }
 
