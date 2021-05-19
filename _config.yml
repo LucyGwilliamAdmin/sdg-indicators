@@ -151,7 +151,8 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@download-button-high-contrast-color
+remote_theme: brockfanning/open-sdg@back-to-top-styling
+
 
 # Apply any custom Javascript.
 custom_js:
