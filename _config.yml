@@ -153,6 +153,7 @@ plugins:
 
 remote_theme: brockfanning/open-sdg@back-to-top-styling
 
+
 # Apply any custom Javascript.
 custom_js:
   - /assets/js/custom.js
