@@ -151,7 +151,8 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@table-and-filter-hover-color
+remote_theme: brockfanning/open-sdg@dropdown-focus-fix
+
 
 
 # Apply any custom Javascript.
