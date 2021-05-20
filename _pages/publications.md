@@ -109,4 +109,4 @@ We used indicator 16.3.2 (unsentenced detainees) to look at prison populations d
 <small>03 August 2018</small>
 <br>
 <br>
-{% include back-to-top.html %}
+[Back to top](#top)

@@ -120,4 +120,4 @@ For more information, [see the IAEG-SDGs Tier Classification for Global SDG Indi
 For further questions about the UK SDG data site please [contact us]({{ site.baseurl }}/contact-us)
 <br>
 <br>
-{% include back-to-top.html %}
+[Back to top](#top)
