@@ -253,6 +253,9 @@ body.contrast-high footer a:visited {
   #main-content a[href="#top"] i.fa-arrow-up {
     margin-right: .3em; }
 
+#top:focus {
+  outline: none !important; }
+
 .breadcrumb {
   margin-bottom: 0;
   background-color: white;
