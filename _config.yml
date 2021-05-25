@@ -15,7 +15,6 @@ environment: staging
 
 remote_data_prefix: "https://LucyGwilliamAdmin.github.io/sdg-data-sandpit"
 
-contrast_type: single
 
 create_indicators:
   layout: indicator
@@ -153,7 +152,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@single-contrast-toggle-button
+remote_theme: brockfanning/open-sdg@dropdown-focus-fix
 
 
 
