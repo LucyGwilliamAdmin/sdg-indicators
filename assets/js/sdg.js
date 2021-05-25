@@ -866,42 +866,19 @@ event.prototype = {
 };
 var accessibilitySwitcher = function() {
 
-  var contrastIdentifiers = ['default', 'high'],
-      contrastType = "single" || "default",
-      singleToggle = (contrastType === 'long' || contrastType === 'single');
+  var contrastIdentifiers = ['default', 'high'];
 
-  if (contrastType === 'long') {
-    $('body').addClass('long');
-  }
-  function setActiveContrast(newContrast) {
-    var oldContrast = getActiveContrast();
-    if (oldContrast !== newContrast) {
-      _.each(contrastIdentifiers, function(id) {
-        $('body').removeClass('contrast-' + id);
-      });
-      $('body').addClass('contrast-' + newContrast);
-
-      createCookie("contrast", newContrast, 365);
-
-      if (singleToggle) {
-        flipAllContrastLinks(oldContrast, newContrast);
-      }
+  function setActiveContrast(contrast) {
+    var contrastType = ""
+    _.each(contrastIdentifiers, function(id) {
+      $('body').removeClass('contrast-' + id);
+    });
+    if(contrastType === "long"){
+	    $("body").addClass("long");
     }
-  }
+    $('body').addClass('contrast-' + contrast);
 
-  function flipAllContrastLinks(newContrast, oldContrast) {
-    var title = getContrastToggleTitle(newContrast),
-        label = getContrastToggleLabel(newContrast);
-        gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', newContrast);
-    $('[data-contrast-switch-to]')
-      .data('contrast-switch-to', newContrast)
-      .attr('title', title)
-      .attr('aria-label', title)
-      .attr(gaAttributes)
-      .html(label)
-      .parent()
-        .addClass('contrast-' + newContrast)
-        .removeClass('contrast-' + oldContrast);
+    createCookie("contrast", contrast, 365);
   }
 
   function getActiveContrast() {
@@ -909,7 +886,7 @@ var accessibilitySwitcher = function() {
       return $('body').hasClass('contrast-' + id);
     });
 
-    return contrast.length > 0 ? contrast[0] : contrastIdentifiers[0];
+    return contrast ? contrast : contrastIdentifiers[0];
   }
 
   function createCookie(name,value,days) {
@@ -945,16 +922,21 @@ var accessibilitySwitcher = function() {
 
   ////////////////////////////////////////////////////////////////////////////////////
 
-  $('[data-contrast-switch-to]').click(function() {
-
-    var oldContrast = getActiveContrast();
-    var newContrast = $(this).data('contrast-switch-to');
-
-    if (oldContrast !== newContrast) {
-      setActiveContrast(newContrast);
-      imageFix(newContrast);
-      broadcastContrastChange(newContrast, this);
-    }
+  _.each(contrastIdentifiers, function(contrast) {
+    var gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', contrast);
+    var contrastTitle = getContrastToggleTitle(contrast);
+    $('.contrast-switcher').append($('<li />').attr({
+      'class': 'nav-link contrast contrast-' + contrast
+    }).html($('<a />').attr(gaAttributes).attr({
+      'href': 'javascript:void(0)',
+      'title': contrastTitle,
+      'aria-label': contrastTitle,
+      'data-contrast': contrast,
+    }).html(getContrastToggleLabel(contrast).replace(" ", "<br/>")).click(function() {
+      setActiveContrast($(this).data('contrast'));
+      imageFix(contrast);
+      broadcastContrastChange(contrast, this);
+    })));
   });
 
   function broadcastContrastChange(contrast, elem) {
@@ -966,12 +948,13 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleLabel(identifier){
-    if (contrastType === "long") {
-      if (identifier === "default") {
-        return translations.header.default_contrast.replace(' ', '<br>');
+    var contrastType = ""
+    if(contrastType === "long") {
+      if(identifier === "default"){
+        return translations.header.default_contrast;
       }
-      else if (identifier === "high") {
-        return translations.header.high_contrast.replace(' ', '<br>');
+      else if(identifier === "high"){
+        return translations.header.high_contrast;
       }
     }
     else {
@@ -980,10 +963,10 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleTitle(identifier){
-    if (identifier === "default") {
+    if(identifier === "default"){
       return translations.header.disable_high_contrast;
     }
-    else if (identifier === "high") {
+    else if(identifier === "high"){
       return translations.header.enable_high_contrast;
     }
   }
@@ -1583,6 +1566,19 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
  */
 function sortFieldsForView(fieldItemStates, edges) {
   if (edges.length > 0 && fieldItemStates.length > 0) {
+
+    // We need to sort the edges so that we process parents before children.
+    var parents = edges.map(function(edge) { return edge.From; });
+    edges.sort(function(a, b) {
+      if (!parents.includes(a.To) && parents.includes(b.To)) {
+        return 1;
+      }
+      if (!parents.includes(b.To) && parents.includes(a.To)) {
+        return -1;
+      }
+      return 0;
+    });
+
     edges.forEach(function(edge) {
       // This makes sure children are right after their parents.
       var parentIndex = fieldItemStates.findIndex(function(fieldItem) {
