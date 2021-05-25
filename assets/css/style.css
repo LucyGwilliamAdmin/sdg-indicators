@@ -181,19 +181,10 @@ input[type="checkbox"]:focus, body.contrast-high input[type="checkbox"]:focus {
 .tabPanel:focus,
 input[type="text"]:focus,
 body.contrast-high input[type="text"]:focus,
-.variable-selector button.accessBtn:focus,
 div[tabindex]:focus {
   background-color: white !important;
   box-shadow: none !important;
   outline: 3px solid #ffdd00 !important; }
-
-body.contrast-high .variable-selector button.accessBtn:focus {
-  background-color: black !important;
-  box-shadow: none !important;
-  outline: 3px solid #ffdd00 !important;
-  color: white !important; }
-  body.contrast-high .variable-selector button.accessBtn:focus, body.contrast-high .variable-selector button.accessBtn:focus span {
-    color: white !important; }
 
 body.contrast-high div[tabindex]:focus {
   background-color: black !important;
@@ -1189,8 +1180,6 @@ body.contrast-high {
   body.contrast-high li.contrast-default a {
     color: black !important; }
 
-body.long.contrast-default li.contrast-default {
-  display: none; }
 body.long.contrast-default li.contrast-high {
   display: block; }
   @media only screen and (max-width: 767px) {
@@ -1202,8 +1191,6 @@ body.long.contrast-high li.contrast-default {
   @media only screen and (max-width: 767px) {
     body.long.contrast-high li.contrast-default {
       width: 60px; } }
-body.long.contrast-high li.contrast-high {
-  display: none; }
 
 body.long .navbar ul.navbar-nav li.contrast {
   font-size: 0.75em;
