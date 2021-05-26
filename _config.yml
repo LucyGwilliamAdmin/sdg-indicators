@@ -152,8 +152,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@single-contrast-toggle-button
-contrast_type: single
+remote_theme: brockfanning/open-sdg@reported-status
 
 
 # Apply any custom Javascript.
