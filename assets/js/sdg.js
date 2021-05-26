@@ -866,42 +866,19 @@ event.prototype = {
 };
 var accessibilitySwitcher = function() {
 
-  var contrastIdentifiers = ['default', 'high'],
-      contrastType = "single" || "default",
-      singleToggle = (contrastType === 'long' || contrastType === 'single');
+  var contrastIdentifiers = ['default', 'high'];
 
-  if (contrastType === 'long') {
-    $('body').addClass('long');
-  }
-  function setActiveContrast(newContrast) {
-    var oldContrast = getActiveContrast();
-    if (oldContrast !== newContrast) {
-      _.each(contrastIdentifiers, function(id) {
-        $('body').removeClass('contrast-' + id);
-      });
-      $('body').addClass('contrast-' + newContrast);
-
-      createCookie("contrast", newContrast, 365);
-
-      if (singleToggle) {
-        flipAllContrastLinks(oldContrast, newContrast);
-      }
+  function setActiveContrast(contrast) {
+    var contrastType = ""
+    _.each(contrastIdentifiers, function(id) {
+      $('body').removeClass('contrast-' + id);
+    });
+    if(contrastType === "long"){
+	    $("body").addClass("long");
     }
-  }
+    $('body').addClass('contrast-' + contrast);
 
-  function flipAllContrastLinks(newContrast, oldContrast) {
-    var title = getContrastToggleTitle(newContrast),
-        label = getContrastToggleLabel(newContrast);
-        gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', newContrast);
-    $('[data-contrast-switch-to]')
-      .data('contrast-switch-to', newContrast)
-      .attr('title', title)
-      .attr('aria-label', title)
-      .attr(gaAttributes)
-      .html(label)
-      .parent()
-        .addClass('contrast-' + newContrast)
-        .removeClass('contrast-' + oldContrast);
+    createCookie("contrast", contrast, 365);
   }
 
   function getActiveContrast() {
@@ -909,7 +886,7 @@ var accessibilitySwitcher = function() {
       return $('body').hasClass('contrast-' + id);
     });
 
-    return contrast.length > 0 ? contrast[0] : contrastIdentifiers[0];
+    return contrast ? contrast : contrastIdentifiers[0];
   }
 
   function createCookie(name,value,days) {
@@ -945,16 +922,21 @@ var accessibilitySwitcher = function() {
 
   ////////////////////////////////////////////////////////////////////////////////////
 
-  $('[data-contrast-switch-to]').click(function() {
-
-    var oldContrast = getActiveContrast();
-    var newContrast = $(this).data('contrast-switch-to');
-
-    if (oldContrast !== newContrast) {
-      setActiveContrast(newContrast);
-      imageFix(newContrast);
-      broadcastContrastChange(newContrast, this);
-    }
+  _.each(contrastIdentifiers, function(contrast) {
+    var gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', contrast);
+    var contrastTitle = getContrastToggleTitle(contrast);
+    $('.contrast-switcher').append($('<li />').attr({
+      'class': 'nav-link contrast contrast-' + contrast
+    }).html($('<a />').attr(gaAttributes).attr({
+      'href': 'javascript:void(0)',
+      'title': contrastTitle,
+      'aria-label': contrastTitle,
+      'data-contrast': contrast,
+    }).html(getContrastToggleLabel(contrast).replace(" ", "<br/>")).click(function() {
+      setActiveContrast($(this).data('contrast'));
+      imageFix(contrast);
+      broadcastContrastChange(contrast, this);
+    })));
   });
 
   function broadcastContrastChange(contrast, elem) {
@@ -966,12 +948,13 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleLabel(identifier){
-    if (contrastType === "long") {
-      if (identifier === "default") {
-        return translations.header.default_contrast.replace(' ', '<br>');
+    var contrastType = ""
+    if(contrastType === "long") {
+      if(identifier === "default"){
+        return translations.header.default_contrast;
       }
-      else if (identifier === "high") {
-        return translations.header.high_contrast.replace(' ', '<br>');
+      else if(identifier === "high"){
+        return translations.header.high_contrast;
       }
     }
     else {
@@ -980,10 +963,10 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleTitle(identifier){
-    if (identifier === "default") {
+    if(identifier === "default"){
       return translations.header.disable_high_contrast;
     }
-    else if (identifier === "high") {
+    else if(identifier === "high"){
       return translations.header.enable_high_contrast;
     }
   }
@@ -1074,7 +1057,6 @@ var VALUE_COLUMN = 'Value';
 // Note this headline color is overridden in indicatorView.js.
 var HEADLINE_COLOR = '#777777';
 var SERIES_TOGGLE = true;
-var GRAPH_TITLE_FROM_SERIES = false;
 
   /**
  * Model helper functions with general utility.
@@ -1656,41 +1638,28 @@ function getCombinationData(fieldItems) {
     });
   });
 
-  // Now compute all combinations of those.
-  var getAllSubsets = function(combinationSet) {
-    if (combinationSet.length == 0) {
-      return [];
-    }
-    var subsets = [combinationSet];
-    if (combinationSet.length == 1) {
-      return subsets;
-    }
-    for (var i = 0; i < combinationSet.length; i++) {
-      var subset = combinationSet.filter(function(item, index) {
-        return index !== i;
-      });
-      if (subset.length > 0) {
-        subsets = subsets.concat(getAllSubsets(subset));
-      }
-    }
-    return subsets;
-  }
-  var allSubsets = getAllSubsets(fieldValuePairs);
+  // Next get a list of each single pair combined with every other.
   var fieldValuePairCombinations = {};
-  allSubsets.forEach(function(subset) {
-    var combinedSubset = {};
-    subset.forEach(function(keyValue) {
-      Object.assign(combinedSubset, keyValue);
+  fieldValuePairs.forEach(function(fieldValuePair) {
+    var combinationsForCurrentPair = Object.assign({}, fieldValuePair);
+    fieldValuePairs.forEach(function(fieldValuePairToAdd) {
+      // The following conditional reflects that we're not interested in combinations
+      // within the same field. (Eg, not interested in combination of Female and Male).
+      if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {
+        Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);
+        var combinationKeys = Object.keys(combinationsForCurrentPair).sort();
+        var combinationValues = Object.values(combinationsForCurrentPair).sort();
+        var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));
+        if (!(combinationUniqueId in fieldValuePairCombinations)) {
+          fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair);
+        }
+      }
     });
-    var combinationKeys = Object.keys(combinedSubset).sort();
-    var combinationValues = Object.values(combinedSubset).sort();
-    var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));
-    if (!(combinationUniqueId in fieldValuePairCombinations)) {
-      fieldValuePairCombinations[combinationUniqueId] = combinedSubset;
-    }
   });
+  fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
 
-  return Object.values(fieldValuePairCombinations);
+  // Return a combination of both.
+  return fieldValuePairs.concat(fieldValuePairCombinations);
 }
 
 /**
@@ -2177,7 +2146,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination);
+  var keys = Object.keys(combination).sort();
   if (keys.length === 0) {
     return fallback;
   }
@@ -2359,7 +2328,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     YEAR_COLUMN: YEAR_COLUMN,
     VALUE_COLUMN: VALUE_COLUMN,
     SERIES_TOGGLE: SERIES_TOGGLE,
-    GRAPH_TITLE_FROM_SERIES: GRAPH_TITLE_FROM_SERIES,
     convertJsonFormatToRows: convertJsonFormatToRows,
     getUniqueValuesByProperty: getUniqueValuesByProperty,
     dataHasUnits: dataHasUnits,
@@ -2458,9 +2426,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
 
   this.refreshSeries = function() {
     if (this.hasSerieses) {
-      if (helpers.GRAPH_TITLE_FROM_SERIES) {
-        this.chartTitle = this.selectedSeries;
-      }
       this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
       this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
       this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data, this.allColumns);
@@ -2866,7 +2831,13 @@ var indicatorView = function (model, options) {
     // loop through the available fields:
     $('.variable-selector').each(function(index, element) {
       var currentField = $(element).data('field');
+
+      // any info?
+      var match = _.find(args.selectedFields, { field : currentField });
       var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + currentField + '"]');
+      var width = match ? (Number(match.values.length / element.find('.variable-options label').length) * 100) + '%' : '0';
+
+      $(element).find('.bar .selected').css('width', width);
 
       // is this an allowed field:
       if (args.allowedFields.includes(currentField)) {
@@ -2881,6 +2852,9 @@ var indicatorView = function (model, options) {
   });
 
   this._model.onFieldsStatusUpdated.attach(function (sender, args) {
+
+    // reset:
+    $(view_obj._rootElement).find('label').removeClass('selected possible excluded');
 
     _.each(args.data, function(fieldGroup) {
       _.each(fieldGroup.values, function(fieldItem) {
@@ -2902,6 +2876,14 @@ var indicatorView = function (model, options) {
 
       // Re-sort the items.
       view_obj.sortFieldGroup(fieldGroupElement);
+    });
+
+    _.each(args.selectionStates, function(ss) {
+      // find the appropriate 'bar'
+      var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + ss.field + '"]');
+      element.find('.bar .default').css('width', ss.fieldSelection.defaultState + '%');
+      element.find('.bar .possible').css('width', ss.fieldSelection.possibleState + '%');
+      element.find('.bar .excluded').css('width', ss.fieldSelection.excludedState + '%');
     });
   });
 
@@ -2962,8 +2944,8 @@ var indicatorView = function (model, options) {
 
   $(this._rootElement).on('click', ':checkbox', function(e) {
 
-    // don't permit disallowed selections:
-    if ($(this).closest('.variable-selector').hasClass('disallowed')) {
+    // don't permit excluded selections:
+    if($(this).parent().hasClass('excluded') || $(this).closest('.variable-selector').hasClass('disallowed')) {
       return;
     }
 
@@ -2973,21 +2955,29 @@ var indicatorView = function (model, options) {
   });
 
   $(this._rootElement).on('click', '.variable-selector', function(e) {
+    var currentSelector = e.target;
 
-    var $button = $(e.target).closest('button');
-    var $options = $(this).find('.variable-options');
+    var currentButton = getCurrentButtonFromCurrentSelector(currentSelector);
 
-    if ($options.is(':visible')) {
-      $options.hide();
-      $button.attr('aria-expanded', 'false');
-    }
-    else {
-      $options.show();
-      $button.attr('aria-expanded', 'true');
-    }
+    var options = $(this).find('.variable-options');
+    var optionsAreVisible = options.is(':visible');
+    $(options)[optionsAreVisible ? 'hide' : 'show']();
+    currentButton.setAttribute("aria-expanded", optionsAreVisible ? "true" : "false");
+
+    var optionsVisibleAfterClick = options.is(':visible');
+    currentButton.setAttribute("aria-expanded", optionsVisibleAfterClick ? "true" : "false");
 
     e.stopPropagation();
   });
+
+  function getCurrentButtonFromCurrentSelector(currentSelector){
+    if(currentSelector.tagName === "H5"){
+      return currentSelector.parentElement;
+    }
+    else if(currentSelector.tagName === "BUTTON"){
+      return currentSelector;
+    }
+  }
 
   this.initialiseFields = function(args) {
     var fieldsContainValues = args.fields.some(function(field) {
@@ -4539,6 +4529,3 @@ function sendPageviewToGoogleAnalytics(){
 }
 
 
-$(document).ready(function() {
-    $('a[href="#top"]').prepend('<i class="fa fa-arrow-up"></i>');
-});
