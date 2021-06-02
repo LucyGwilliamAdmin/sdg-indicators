@@ -152,7 +152,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@format-date-fields
+remote_theme: brockfanning/open-sdg@custom-head-include
 
 
 # Apply any custom Javascript.
