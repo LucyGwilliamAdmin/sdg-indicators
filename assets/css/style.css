@@ -1870,20 +1870,12 @@ footer {
   #main-content #legend .swatch {
     display: inline-block;
     width: 45px;
-    height: 10px;
+    height: 15px;
     margin-right: 3px; }
     #main-content #legend .swatch.dashed {
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
       background-repeat: repeat;
       background-position: -5px 0; }
-    #main-content #legend .swatch .swatch-inner {
-      width: 15px;
-      height: 18px;
-      display: inline-block;
-      margin-top: -11px;
-      border-radius: 50px; }
-      #main-content #legend .swatch .swatch-inner.headline {
-        border-radius: 0; }
   #main-content #legend span {
     vertical-align: middle;
     line-height: 18px; }
@@ -2607,8 +2599,7 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
   font-weight: 700; }
 .layout-config-builder div[data-schemapath="root"] > .well > div > div > .row > div[data-schematype] > div a {
   margin-top: 15px;
-  display: block;
-  margin-bottom: 15px; }
+  display: inline-block; }
 .layout-config-builder div[data-schemapath="root"] > .je-header {
   display: none !important; }
 .layout-config-builder .help-block {
@@ -2622,9 +2613,6 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
   font-weight: bold; }
 .layout-config-builder .config-required {
   color: #a94442; }
-.layout-config-builder .translation-link {
-  margin-top: 0;
-  margin-bottom: 20px; }
 .layout-config-builder.contrast-high .config-widgets {
   background-color: black; }
 .layout-config-builder.contrast-high div[data-schemapath="root"] > .well > div > div > .row {
@@ -2644,23 +2632,6 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
   border-bottom: 2px solid black; }
 .layout-config-builder.contrast-high .btn-group .btn span {
   color: black; }
-
-.layout-data-editor .editor-wrapper {
-  margin-top: 20px; }
-.layout-data-editor .config-widgets {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  background-color: #f5f5f5;
-  padding: 20px; }
-  .layout-data-editor .config-widgets .data-download-buttons {
-    text-align: right; }
-    .layout-data-editor .config-widgets .data-download-buttons button {
-      margin-top: 0; }
-  .layout-data-editor .config-widgets .data-grid-buttons label, .layout-data-editor .config-widgets .data-grid-buttons #add-column-name {
-    float: left;
-    margin-right: 10px; }
-  .layout-data-editor .config-widgets .data-grid-buttons #add-column {
-    margin-top: 0; }
 
 /**
  * custom.scss
