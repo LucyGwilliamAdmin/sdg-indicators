@@ -152,7 +152,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@custom-head-include
+remote_theme: brockfanning/open-sdg@headline-data-shapes
 
 
 # Apply any custom Javascript.
