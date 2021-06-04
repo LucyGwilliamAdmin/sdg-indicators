@@ -30,7 +30,7 @@ Google Analytics stores information about:
 
 <table class="table">
   <colgroup>
-    <col class="ten" />
+    <col class="twenty" />
     <col class="fourtyfive" />
     <col class="ten" />
   </colgroup>
@@ -76,7 +76,7 @@ Hotjar stores information about:
 
 <table class="table">
   <colgroup>
-    <col class="ten" />
+    <col class="twenty" />
     <col class="fourtyfive" />
     <col class="ten" />
   </colgroup>
@@ -174,7 +174,7 @@ Cloudflare stores information about:
 
 <table class="table">
   <colgroup>
-    <col class="ten" />
+    <col class="twenty" />
     <col class="fourtyfive" />
     <col class="ten" />
   </colgroup>
@@ -207,7 +207,7 @@ We will set cookies so that your computer remembers which version of the site yo
 
 <table class="table">
   <colgroup>
-    <col class="ten" />
+    <col class="twenty" />
     <col class="fourtyfive" />
     <col class="ten" />
   </colgroup>
