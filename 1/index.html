@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://LucyGwilliamAdmin.github.io/sdg-data-sandpit/en',
+  remoteDataBaseUrl: 'https://ONSdigital.github.io/sdg-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210608122008">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210608122546">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210608122008"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210608122546"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
         <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
 <script>
@@ -168,16 +168,16 @@ layout-goal-by-target-vertical
 <div id="disclaimer">
   <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">BETA</strong>
+    <strong class="phase-tag">Alpha</strong>
     
-    This website is in development – your <a href="https://www.surveymonkey.co.uk/r/SDGfeedback">feedback</a> will help us to improve it
+    This is a development website. We welcome your <a href="mailto:sustainabledevelopment@ons.gov.uk">feedback</a>.
     <a id="takepartButton" aria-labelledby="takepartButton" href="/sdg-indicators/take-part" class="btn btn-primary btn-download btn-takepart" role="link">Take part in user research</a>
   </div>
 </div>
 
 </div>
 
-<header role="banner" class="header-menu-left-aligned">
+<header role="banner" class="header-default">
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
@@ -217,49 +217,7 @@ data-event-label="high"
     </ul></div>
     </div>
 
-    <div class="search-and-desktop-widgets">
-      <div id="search" class="menu-target">
-  <form action="/sdg-indicators/search">
-    <label class="sr-only" for="indicator_search">Search</label>
-    <input type="text" name="q" id="indicator_search" title="Search" /><!--
-    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
-  </form>
-</div>
-
-      <div class="navbar navbar-default widgets-without-menu">
-        <ul class="nav navbar-nav contrast-switcher">
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-        </ul>
-      </div>
-    </div>
-
-    <div class="navbar navbar-default menu-without-widgets" id="main-nav">
+    <nav class="navbar navbar-default" id="main-nav">
       <ul class="top-level">
     <li id="menuToggle"
         aria-label="Menu toggle. Click to expand or collapse the menu."
@@ -325,7 +283,15 @@ data-event-label="high"
 
     </li>
 </ul>
-      <ul class="nav navbar-nav menu-target " id="menu"><li class="nav-link ">
+      <div id="search" class="menu-target">
+  <form action="/sdg-indicators/search">
+    <label class="sr-only" for="indicator_search">Search</label>
+    <input type="text" name="q" id="indicator_search" title="Search" /><!--
+    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
     <a href="/sdg-indicators/goals">Goals</a>
 </li><li class="nav-link ">
     <a href="/sdg-indicators/reporting-status/">Reporting Status</a>
@@ -339,10 +305,38 @@ data-event-label="high"
     <a href="/sdg-indicators/updates/">Updates</a>
 </li>
 
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
-    </div>
-
+    </nav>
   </div>
 
 </header>
@@ -354,8 +348,7 @@ data-event-label="high"
 <div class="container">
   <ol class="breadcrumb">
   
-  <li><a href="/sdg-indicators/">Home</a></li>
-  <li class="active">Goal 1</li>
+  
   
 </ol>
 
@@ -405,13 +398,13 @@ data-event-label="high"
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 1.1.1</span>
             </h4>
-            <span class="indicator-name"><a href="/sdg-indicators/1-1-1">Proportion of population below the international poverty line, by sex, age, employment status and geographical location (urban/rural)</a></span>
+            <span class="indicator-name"><a href="/sdg-indicators/1-1-1">Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)</a></span>
             <span class="sr-only">Indicator status</span>
             
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -442,7 +435,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -464,7 +457,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -542,13 +535,13 @@ data-event-label="high"
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 1.4.2</span>
             </h4>
-            <span class="indicator-name"><a href="/sdg-indicators/1-4-2">Proportion of total adult population with secure tenure rights to land, with legally recognized documentation, and who perceive their rights to land as secure, by sex and by type of tenure</a></span>
+            <span class="indicator-name"><a href="/sdg-indicators/1-4-2">Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure</a></span>
             <span class="sr-only">Indicator status</span>
             
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -579,7 +572,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -623,7 +616,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -645,7 +638,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -670,13 +663,13 @@ data-event-label="high"
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 1.a.1</span>
             </h4>
-            <span class="indicator-name"><a href="/sdg-indicators/1-a-1">Proportion of domestically generated resources allocated by the government directly to poverty reduction programmes</a></span>
+            <span class="indicator-name"><a href="/sdg-indicators/1-a-1">Total official development assistance grants from all donors that focus on poverty reduction as a share of the recipient country’s gross national income</a></span>
             <span class="sr-only">Indicator status</span>
             
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -698,7 +691,7 @@ data-event-label="high"
 
 
 <span class="status complete">
-    Reported
+    Reported online
 </span>
 
             
@@ -723,7 +716,7 @@ data-event-label="high"
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 1.b.1</span>
             </h4>
-            <span class="indicator-name"><a href="/sdg-indicators/1-b-1">Proportion of government recurrent and capital spending to sectors that disproportionately benefit women, the poor and vulnerable groups</a></span>
+            <span class="indicator-name"><a href="/sdg-indicators/1-b-1">Pro-poor public social spending</a></span>
             <span class="sr-only">Indicator status</span>
             
 
@@ -751,7 +744,8 @@ data-event-label="high"
             
               
                 <li>
-                <a href="/sdg-indicators/contact-us">Contact us</a>
+                
+                  <a href="mailto:sustainabledevelopment@ons.gov.uk" target="_blank">Contact us</a>
                 
                 </li>
               
@@ -807,12 +801,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210608122008'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210608122546'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210608122008"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210608122546"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

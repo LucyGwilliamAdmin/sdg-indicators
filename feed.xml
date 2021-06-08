@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>U.K. Indicators For The Sustainable Development Goals</title>
-    <description>Data Platform Prototype</description>
+    <description></description>
     <link>/sdg-indicators/</link>
     <atom:link href="/sdg-indicators/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jun 2021 12:20:08 +0000</pubDate>
-    <lastBuildDate>Tue, 08 Jun 2021 12:20:08 +0000</lastBuildDate>
+    <pubDate>Tue, 08 Jun 2021 12:25:46 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Jun 2021 12:25:46 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -525,8 +525,8 @@
 
 </description>
         <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2021/02/17/2020-indicator-changes.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2021/02/17/2020-indicator-changes.html</guid>
+        <link>/sdg-indicators/news/2021/02/17/2020-indicator-changes.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2021/02/17/2020-indicator-changes.html</guid>
         
         
         <category>Indicator changes</category>
@@ -552,8 +552,8 @@
 &lt;p&gt;We are working to find the best data and are experimenting to see where new statistics need to be created.  More information about this work can be found in &lt;a href=&quot;https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAzMDYuMTgyODcyMjEiLCJ1cmwiOiJodHRwczovL2RhdGFzY2llbmNlY2FtcHVzLm9ucy5nb3YudWsvZGF0YS1zY2llbmNlLWZvci1zdXN0YWluYWJsZS1kZXZlbG9wbWVudC8ifQ.764KnZW3s47ACDKqft48zN5FHp-IP2DYR5OS9dyXWv4/br/75802142619-l&quot;&gt;a recent blog by the ONS’s Data Science Campus&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2020/03/06/IWD-2020.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2020/03/06/IWD-2020.html</guid>
+        <link>/sdg-indicators/news/2020/03/06/IWD-2020.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2020/03/06/IWD-2020.html</guid>
         
         
         <category>Equality</category>
@@ -593,8 +593,8 @@
 &lt;p&gt;For more information about the international work we are doing, please &lt;a href=&quot;/sdg-indicators/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2019/11/04/international-work.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2019/11/04/international-work.html</guid>
+        <link>/sdg-indicators/news/2019/11/04/international-work.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2019/11/04/international-work.html</guid>
         
         
         <category>International</category>
@@ -667,8 +667,8 @@ The Centre for International Migration has published a range of research outputs
 &lt;p&gt;For more information about the work we are doing with other departments, please &lt;a href=&quot;/sdg-indicators/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2019/11/04/funded-work.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2019/11/04/funded-work.html</guid>
+        <link>/sdg-indicators/news/2019/11/04/funded-work.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2019/11/04/funded-work.html</guid>
         
         
         <category>Data partners</category>
@@ -696,8 +696,8 @@ The Digital Accessibility Centre tested the data site against the WCAG ‘AA’ 
 &lt;p&gt;For more information about what tools the site is compatible with and any know issues, see our &lt;a href=&quot;/sdg-indicators/accessibility-statement/&quot;&gt;accessibility statement&lt;/a&gt;, or please &lt;a href=&quot;/sdg-indicators/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2019/11/04/accessibility.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2019/11/04/accessibility.html</guid>
+        <link>/sdg-indicators/news/2019/11/04/accessibility.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2019/11/04/accessibility.html</guid>
         
         
         <category>Accessibility</category>
@@ -723,8 +723,8 @@ The Digital Accessibility Centre tested the data site against the WCAG ‘AA’ 
 &lt;p&gt;For more information about the work we are doing with APIs, please &lt;a href=&quot;/sdg-indicators/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-        <link>/sdg-indicators/updates/2019/11/04/APIs.html</link>
-        <guid isPermaLink="true">/sdg-indicators/updates/2019/11/04/APIs.html</guid>
+        <link>/sdg-indicators/news/2019/11/04/APIs.html</link>
+        <guid isPermaLink="true">/sdg-indicators/news/2019/11/04/APIs.html</guid>
         
         
         <category>Automation</category>
