@@ -1,4 +1,4 @@
-accessible_charts: true
+﻿accessible_charts: true
 accessible_tabs: true
 analytics:
   ga_prod: ''
@@ -6,15 +6,17 @@ breadcrumbs:
   goal: []
   indicator: []
   post: []
+contrast_type: default
 country:
   name: UK
   adjective: UK
-create_config_forms:
-  layout: config-builder
 create_goals:
   layout: goal-by-target-vertical
+  previous_next_links: false
+  goals: []
 create_indicators:
   layout: indicator
+  previous_next_links: false
 create_pages:
   - filename: ''
     folder: /
@@ -41,6 +43,9 @@ custom_css:
 custom_js:
   - /assets/js/custom.js
 data_edit_url: 'http://prose.io/#onsdigital/sdg-data/edit/develop/data/indicator_[id].csv'
+data_fields:
+  units: ''
+  series: ''
 date_formats:
   - type: standard
     language: en
@@ -76,8 +81,7 @@ frontpage_cards:
       data](https://www.ons.gov.uk/economy/environmentalaccounts/articles/sustainabledevelopmentgoalstakingstockprogressandpossibilities/november2019)
       [UK SDG Voluntary National
       Review](https://www.gov.uk/government/publications/uks-voluntary-national-review-of-the-sustainable-development-goals)
-      <br/><br/>
-      <a href="./publications" aria-label="More publications">More
+      <br/><br/> <a href="./publications" aria-label="More publications">More
       publications...</a>
     include: ''
     button_label: ''
@@ -85,8 +89,8 @@ frontpage_cards:
     rule_color: ''
   - title: Useful resources
     content: >
-      [The Global Goals](https://www.globalgoals.org/)
-      [Implementing the Sustainable Development
+      [The Global Goals](https://www.globalgoals.org/) [Implementing the
+      Sustainable Development
       Goals](https://www.gov.uk/government/publications/implementing-the-sustainable-development-goals/implementing-the-sustainable-development-goals--2)
       [UN Department of Economic and Social
       Affairs](https://sustainabledevelopment.un.org/)
@@ -119,22 +123,41 @@ goals_page:
   description: >-
     Click on each goal for UK Sustainable Development Goal global indicator
     data.
+graph_color_headline: '#004466'
+graph_color_headline_high_contrast: '#55a6e5'
 graph_color_set: default
 graph_color_list: []
 graph_color_number: 0
+graph_title_from_series: false
+header:
+  include: header-default.html
 header_language_toggle: none
 hide_empty_metadata: false
 indicator_config_form:
+  enabled: false
   dropdowns: []
+  repository_link: ''
+  translation_link: ''
+indicator_data_form:
+  enabled: false
+  repository_link: ''
 indicator_metadata_form:
+  enabled: true
+  dropdowns: []
+  repository_link: >-
+    https://github.com/LucyGwilliamAdmin/sdg-data-sandpit/tree/develop/indicator-config
+  translation_link: ''
+  language: ''
   scopes:
     - global
     - data
   exclude_fields:
     - indicator_sort_order
+  translated: false
 languages:
   - en
 languages_public: []
+logos: []
 map_layers:
   - subfolder: country
     label: Country
@@ -186,16 +209,22 @@ map_options:
 menu:
   - path: /goals
     translation_key: general.goals
+    dropdown: []
   - path: /reporting-status/
     translation_key: menu.reporting_status
+    dropdown: []
   - path: /about/
     translation_key: menu.about
+    dropdown: []
   - path: /publications/
     translation_key: menu.publications
+    dropdown: []
   - path: /faq/
     translation_key: menu.faq
+    dropdown: []
   - path: /updates/
     translation_key: menu.updates
+    dropdown: []
 metadata_edit_url: 'http://prose.io/#onsdigital/sdg-data/edit/develop/meta/[id].md'
 metadata_tabs: []
 news:
@@ -207,6 +236,7 @@ reporting_status:
   description: >-
     An overview of how much data the UK reports for Sustainable Development Goal
     global indicators.
+  disaggregation_tabs: false
 search_index_boost: []
 search_index_extra_fields:
   - indicator_available
