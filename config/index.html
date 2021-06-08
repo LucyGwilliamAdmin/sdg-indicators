@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210608123839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210608124941">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210608123839"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210608124941"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
         <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
 <script>
@@ -638,7 +638,19 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: breadcrumbs');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.breadcrumbs'));propertyEditorAccessibilityFixes(editor.getEditor('root.contrast_type'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.breadcrumbs'));
+      try {
+        var currentValue = normalizeCurrentValue('contrast_type', "default");
+        var propertyEditor = editor.getEditor('root.contrast_type');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: contrast_type');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.contrast_type'));
       try {
         var currentValue = normalizeCurrentValue('country', {"name":"UK","adjective":"UK"});
         var propertyEditor = editor.getEditor('root.country');
@@ -652,7 +664,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.country'));
       try {
-        var currentValue = normalizeCurrentValue('create_goals', {"layout":"goal-by-target-vertical"});
+        var currentValue = normalizeCurrentValue('create_goals', {"layout":"goal-by-target-vertical","previous_next_links":false,"goals":[]});
         var propertyEditor = editor.getEditor('root.create_goals');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -664,7 +676,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.create_goals'));
       try {
-        var currentValue = normalizeCurrentValue('create_indicators', {"layout":"indicator"});
+        var currentValue = normalizeCurrentValue('create_indicators', {"layout":"indicator","previous_next_links":false});
         var propertyEditor = editor.getEditor('root.create_indicators');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -734,7 +746,19 @@ data-event-label="high"
       catch (e) {
         console.log(e.message);
         console.log('Unable to set "required" flag: data_edit_url');
-      }propertyEditorAccessibilityFixes(editor.getEditor('root.data_edit_url'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_fields'));
+      }propertyEditorAccessibilityFixes(editor.getEditor('root.data_edit_url'));
+      try {
+        var currentValue = normalizeCurrentValue('data_fields', {"units":"","series":""});
+        var propertyEditor = editor.getEditor('root.data_fields');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: data_fields');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.data_fields'));
       try {
         var currentValue = normalizeCurrentValue('date_formats', [{"type":"standard","language":"en","format":"%d %B %Y"}]);
         var propertyEditor = editor.getEditor('root.date_formats');
@@ -926,7 +950,31 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: goals_page');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.goals_page'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_headline'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_headline_high_contrast'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goals_page'));
+      try {
+        var currentValue = normalizeCurrentValue('graph_color_headline', "#004466");
+        var propertyEditor = editor.getEditor('root.graph_color_headline');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: graph_color_headline');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_headline'));
+      try {
+        var currentValue = normalizeCurrentValue('graph_color_headline_high_contrast', "#55a6e5");
+        var propertyEditor = editor.getEditor('root.graph_color_headline_high_contrast');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: graph_color_headline_high_contrast');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_headline_high_contrast'));
       try {
         var currentValue = normalizeCurrentValue('graph_color_set', "default");
         var propertyEditor = editor.getEditor('root.graph_color_set');
@@ -962,7 +1010,19 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: graph_color_number');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_number'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title_from_series'));propertyEditorAccessibilityFixes(editor.getEditor('root.header'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_color_number'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title_from_series'));
+      try {
+        var currentValue = normalizeCurrentValue('header', {"include":"header-default.html"});
+        var propertyEditor = editor.getEditor('root.header');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: header');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.header'));
       try {
         var currentValue = normalizeCurrentValue('header_language_toggle', "none");
         var propertyEditor = editor.getEditor('root.header_language_toggle');
@@ -976,7 +1036,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.header_language_toggle'));propertyEditorAccessibilityFixes(editor.getEditor('root.hide_empty_metadata'));
       try {
-        var currentValue = normalizeCurrentValue('indicator_config_form', {"dropdowns":[]});
+        var currentValue = normalizeCurrentValue('indicator_config_form', {"enabled":false,"dropdowns":[],"repository_link":"","translation_link":""});
         var propertyEditor = editor.getEditor('root.indicator_config_form');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -986,9 +1046,21 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: indicator_config_form');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_config_form'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_data_form'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_config_form'));
       try {
-        var currentValue = normalizeCurrentValue('indicator_metadata_form', {"scopes":["global","data"],"exclude_fields":["indicator_sort_order"]});
+        var currentValue = normalizeCurrentValue('indicator_data_form', {"enabled":false,"repository_link":""});
+        var propertyEditor = editor.getEditor('root.indicator_data_form');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: indicator_data_form');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_data_form'));
+      try {
+        var currentValue = normalizeCurrentValue('indicator_metadata_form', {"enabled":true,"dropdowns":[],"repository_link":"https://github.com/LucyGwilliamAdmin/sdg-data-sandpit/tree/develop/indicator-config","translation_link":"","language":"","scopes":["global","data"],"exclude_fields":["indicator_sort_order"],"translated":false});
         var propertyEditor = editor.getEditor('root.indicator_metadata_form');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1034,7 +1106,19 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: languages_public');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.languages_public'));propertyEditorAccessibilityFixes(editor.getEditor('root.logos'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.languages_public'));
+      try {
+        var currentValue = normalizeCurrentValue('logos', []);
+        var propertyEditor = editor.getEditor('root.logos');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: logos');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.logos'));
       try {
         var currentValue = normalizeCurrentValue('map_layers', [{"subfolder":"country","label":"Country","min_zoom":4,"max_zoom":6,"staticBorders":true},{"subfolder":"regions","label":"Regions","min_zoom":6,"max_zoom":8,"staticBorders":true},{"subfolder":"local_authorities","label":"Local Authorities","min_zoom":9,"max_zoom":12,"staticBorders":true}]);
         var propertyEditor = editor.getEditor('root.map_layers');
@@ -1060,7 +1144,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.map_options'));
       try {
-        var currentValue = normalizeCurrentValue('menu', [{"path":"/goals","translation_key":"general.goals"},{"path":"/reporting-status/","translation_key":"menu.reporting_status"},{"path":"/about/","translation_key":"menu.about"},{"path":"/publications/","translation_key":"menu.publications"},{"path":"/faq/","translation_key":"menu.faq"},{"path":"/updates/","translation_key":"menu.updates"}]);
+        var currentValue = normalizeCurrentValue('menu', [{"path":"/goals","translation_key":"general.goals","dropdown":[]},{"path":"/reporting-status/","translation_key":"menu.reporting_status","dropdown":[]},{"path":"/about/","translation_key":"menu.about","dropdown":[]},{"path":"/publications/","translation_key":"menu.publications","dropdown":[]},{"path":"/faq/","translation_key":"menu.faq","dropdown":[]},{"path":"/updates/","translation_key":"menu.updates","dropdown":[]}]);
         var propertyEditor = editor.getEditor('root.menu');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1084,7 +1168,7 @@ data-event-label="high"
         console.log('Unable to set "required" flag: menu');
       }propertyEditorAccessibilityFixes(editor.getEditor('root.menu'));
       try {
-        var currentValue = normalizeCurrentValue('metadata_edit_url', "http://prose.io/#onsdigital/sdg-data/edit/develop/meta/[id].md");
+        var currentValue = normalizeCurrentValue('metadata_edit_url', "metadata");
         var propertyEditor = editor.getEditor('root.metadata_edit_url');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1168,7 +1252,7 @@ data-event-label="high"
         console.log('Unable to set "required" flag: remote_data_prefix');
       }propertyEditorAccessibilityFixes(editor.getEditor('root.remote_data_prefix'));
       try {
-        var currentValue = normalizeCurrentValue('reporting_status', {"title":"Reporting Status","description":"An overview of how much data the UK reports for Sustainable Development Goal global indicators."});
+        var currentValue = normalizeCurrentValue('reporting_status', {"title":"Reporting Status","description":"An overview of how much data the UK reports for Sustainable Development Goal global indicators.","disaggregation_tabs":false});
         var propertyEditor = editor.getEditor('root.reporting_status');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1367,12 +1451,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210608123839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210608124941'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210608123839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210608124941"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
