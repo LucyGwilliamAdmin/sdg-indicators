@@ -134,9 +134,10 @@ header:
 header_language_toggle: none
 hide_empty_metadata: false
 indicator_config_form:
-  enabled: false
+  enabled: true
   dropdowns: []
-  repository_link: ''
+  repository_link: >-
+    https://github.com/LucyGwilliamAdmin/sdg-data-sandpit/tree/develop/indicator-config
   translation_link: ''
 indicator_data_form:
   enabled: false
@@ -151,6 +152,7 @@ indicator_metadata_form:
   scopes:
     - global
     - data
+    - national
   exclude_fields:
     - indicator_sort_order
   translated: false
