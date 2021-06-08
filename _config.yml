@@ -160,6 +160,12 @@ indicator_metadata_form:
     - data
   exclude_fields:
     - indicator_sort_order
+    
+site_config_form:
+  enabled: true
+  dropdowns: []
+  repository_link: 'https://github.com/lucygwilliamadmin/sdg-indicators/tree/develop/_data'
+  translation_link: ''
 
 
 # Apply any custom Javascript.
