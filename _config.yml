@@ -152,7 +152,14 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: brockfanning/open-sdg@custom-head-include
+remote_theme: open-sdg/open-sdg@1.4.0-dev
+
+indicator_metadata_form:
+  scopes:
+    - global
+    - data
+  exclude_fields:
+    - indicator_sort_order
 
 
 # Apply any custom Javascript.
