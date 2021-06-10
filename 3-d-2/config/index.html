@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210609133652">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610012736">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210609133652"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210610012736"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
         <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
 <script>
@@ -590,67 +590,7 @@ data-event-label="high"
       }
     }
 
-    // Set values according to this site's configuration.propertyEditorAccessibilityFixes(editor.getEditor('root.composite_breakdown_label'));
-      try {
-        var currentValue = normalizeCurrentValue('computation_units', "Rate per 100,000 population, Percentage (%)");
-        var propertyEditor = editor.getEditor('root.computation_units');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: computation_units');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));propertyEditorAccessibilityFixes(editor.getEditor('root.copyright'));
-      try {
-        var currentValue = normalizeCurrentValue('data_footnote', "Timescales are not consistent across all series");
-        var propertyEditor = editor.getEditor('root.data_footnote');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: data_footnote');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_non_statistical'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_class'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_heading'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_start_values'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_footer'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_html'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_tab_title'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_title'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_url'));propertyEditorAccessibilityFixes(editor.getEditor('root.expected_disaggregations'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_annotations'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_limits'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_stacked_disaggregation'));
-      try {
-        var currentValue = normalizeCurrentValue('graph_title', "global_indicators.3-d-2-title");
-        var propertyEditor = editor.getEditor('root.graph_title');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_title');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title'));
-      try {
-        var currentValue = normalizeCurrentValue('graph_titles', [{"series":"Rate of MRSA bloodstream infection","title":"Rate of MRSA bloodstream infection"},{"series":"Rate of E. coli bloodstream infection","title":"Rate of E. coli bloodstream infection"},{"series":"Proportion of E.coli bloodstream infections resistant to antibiotics","title":"Proportion of E.coli bloodstream infections resistant to antibiotics"},{"series":"Proportion of S. aureaus bloodstream infections resistant to antibiotics","title":"Proportion of S. aureaus bloodstream infections resistant to antibiotics"}]);
-        var propertyEditor = editor.getEditor('root.graph_titles');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_titles');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_titles'));
-      try {
-        var currentValue = normalizeCurrentValue('graph_type', "line");
-        var propertyEditor = editor.getEditor('root.graph_type');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_type');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.graph_type'));
+    // Set values according to this site's configuration.propertyEditorAccessibilityFixes(editor.getEditor('root.composite_breakdown_label'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));propertyEditorAccessibilityFixes(editor.getEditor('root.copyright'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_non_statistical'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_class'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_heading'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_start_values'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_footer'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_html'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_tab_title'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_title'));propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_url'));propertyEditorAccessibilityFixes(editor.getEditor('root.expected_disaggregations'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_annotations'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_limits'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_stacked_disaggregation'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_titles'));propertyEditorAccessibilityFixes(editor.getEditor('root.graph_type'));
       try {
         var currentValue = normalizeCurrentValue('indicator_name', "global_indicators.3-d-2-title");
         var propertyEditor = editor.getEditor('root.indicator_name');
@@ -674,19 +614,7 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: indicator_number');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));
-      try {
-        var currentValue = normalizeCurrentValue('national_geographical_coverage', "England, Wales and Northern Ireland");
-        var propertyEditor = editor.getEditor('root.national_geographical_coverage');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: national_geographical_coverage');
-      }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
       try {
         var currentValue = normalizeCurrentValue('page_content', "");
         var propertyEditor = editor.getEditor('root.page_content');
@@ -700,7 +628,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.page_content'));propertyEditorAccessibilityFixes(editor.getEditor('root.permalink'));propertyEditorAccessibilityFixes(editor.getEditor('root.precision'));
       try {
-        var currentValue = normalizeCurrentValue('reporting_status', "complete");
+        var currentValue = normalizeCurrentValue('reporting_status', "notstarted");
         var propertyEditor = editor.getEditor('root.reporting_status');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -839,12 +767,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210609133652'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210610012736'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210609133652"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210610012736"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

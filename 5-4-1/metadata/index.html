@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210609133652">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610012736">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210609133652"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210610012736"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
         <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
 <script>
@@ -686,9 +686,21 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: goal_meta_link_text');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_available'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_available'));
       try {
-        var currentValue = normalizeCurrentValue('national_geographical_coverage', "United Kingdom");
+        var currentValue = normalizeCurrentValue('national_indicator_description', "Proportion of the population who are unpaid carers, by time spent on unpaid care, disability status, age and sex.");
+        var propertyEditor = editor.getEditor('root.national_indicator_description');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: national_indicator_description');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));
+      try {
+        var currentValue = normalizeCurrentValue('national_geographical_coverage', "Great Britain");
         var propertyEditor = editor.getEditor('root.national_geographical_coverage');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -712,7 +724,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));
       try {
-        var currentValue = normalizeCurrentValue('computation_definitions', "An activity is said to be productive or to fall within the “general production boundary” if it satisfies the third-person criterion (the activity can be delegated to another person and yield the same desired results). Productive activities can be further classified based on the ILO framework for work statistics (included in the 19th ICLS resolution) into - i) Own-use production work (activities to produce goods and services for own final use; the intended destination of the output is mainly for final use of the producer in the form of capital formation, or final consumption by household members or by family members living in other households; in the case of agricultural, fishing, hunting or gathering goods intended mainly for own consumption, a part or surplus may nevertheless be sold or bartered); ii) Employment (activities to produce goods or provide services for pay or profit); ii) Unpaid trainee work (any unpaid activity to produce goods or provide services for others, in order to acquire workplace experience or skills in a trade or profession); iv) Volunteer work (any unpaid, non-compulsory activity to produce goods or provide services for others); v) Other forms of work. The own-use production work can be differentiated based on whether goods or services are produced. Indicator 5.4.1 only considers the own-use production work of services, or in other words, the activities related to unpaid domestic services and unpaid caregiving services undertaken by households for their own use. These activities are listed in ICATUS 2016 under the major divisions “3. Unpaid domestic services for household and family members” and “4. Unpaid caregiving services for household and family members”. As much as possible, statistics compiled by UNSD are based on the International Classification of Activities for Time Use Statistics 2016 (ICATUS 2016), which classifies activities undertaken by persons during the survey period. ICATUS 2016 was adopted by the United Nations Statistical Commission for use as an international statistical classification at its 48th session, 7-10 March 2017.");
+        var currentValue = normalizeCurrentValue('computation_definitions', "<p> A person is considered an “unpaid-carer” if they provide support/care to an individual who has needs due to physical or mental health condition(s) or illness(es), or problems related to old age. This definition is consistent with the Government Statistical Service (GSS) harmonised “core” definition </p> <p> Unpaid carers are self-reported as everyone who answered \"Yes\" or \"No\" to the question -  \"In the past seven days, did you look after or give any help or support to, anyone inside or outside your household because they have - long-term physical or mental health conditions or illnesses, or problems related to old age?\" </p> <p> A person is considered to have a disability if they have a self-reported long-standing illness, condition or impairment which causes difficulty with day-to-day activities. This definition is consistent with the Equality Act 2010. </p>");
         var propertyEditor = editor.getEditor('root.computation_definitions');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -722,21 +734,21 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: computation_definitions');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));propertyEditorAccessibilityFixes(editor.getEditor('root.available_disaggregations'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));
       try {
-        var currentValue = normalizeCurrentValue('computation_calculations', "Data presented for this indicator are expressed as a proportion of time in a day. Weekly data is averaged over seven days of the week to obtain the daily average time. Proportion of time spent on unpaid domestic and care work is calculated by dividing the daily average number of hours spent on unpaid domestic and care work by 24 hours.");
-        var propertyEditor = editor.getEditor('root.computation_calculations');
+        var currentValue = normalizeCurrentValue('available_disaggregations', "Age, Sex, Disability, Numbers of hours spent");
+        var propertyEditor = editor.getEditor('root.available_disaggregations');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: computation_calculations');
+        console.log('Unable to set config key: available_disaggregations');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.available_disaggregations'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));
       try {
-        var currentValue = normalizeCurrentValue('other_info', "Data follows the UN specification for this indicator. This indicator has been identified in collaboration with topic experts.");
+        var currentValue = normalizeCurrentValue('other_info', "<p>The data were collected between 31 March and 25 April 2021. During this period the “rule of 6” was in place in England (29 March), “stay local” restrictions were lifted in Wales (from 27 March), and “stay home” rules in Scotland were replaced by “stay local” rules (2 April).</p>  <p> This indicator previously showed data from the time use survey. As this  data is discontinues it has been replaced by data from the OPN, currently displayed </p>  This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.");
         var propertyEditor = editor.getEditor('root.other_info');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -748,7 +760,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
       try {
-        var currentValue = normalizeCurrentValue('national_data_update_url', "https://github.com/ONSdigital/sdg-data/commit/e99686199b5d0c922e56b898a5eff82bdf19d2e2");
+        var currentValue = normalizeCurrentValue('national_data_update_url', "https://github.com/ONSdigital/sdg-data/commit/f11faf2ca6a4ce12926a6285825f8c7b24625593");
         var propertyEditor = editor.getEditor('root.national_data_update_url');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -772,7 +784,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url_text'));
       try {
-        var currentValue = normalizeCurrentValue('national_metadata_update_url', "https://github.com/ONSdigital/sdg-data/commit/e99686199b5d0c922e56b898a5eff82bdf19d2e2");
+        var currentValue = normalizeCurrentValue('national_metadata_update_url', "https://github.com/ONSdigital/sdg-data/commit/f11faf2ca6a4ce12926a6285825f8c7b24625593");
         var propertyEditor = editor.getEditor('root.national_metadata_update_url');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -808,7 +820,7 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.reporting_status'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_non_statistical'));
       try {
-        var currentValue = normalizeCurrentValue('data_footnote', "Data are only available for the years 2000, 2005, and 2015, which are the years used on the X axis. Data were recorded between the periods June 2000 to September 2001, February 2005 to November 2005, and April 2014 to November 2015 respectively");
+        var currentValue = normalizeCurrentValue('data_footnote', "The data were collected between 31 March and 25 April 2021. During this period the “rule of 6” was in place in England (29 March), “stay local” restrictions were lifted in Wales (from 27 March), and “stay home” rules in Scotland were replaced by “stay local” rules (2 April).");
         var propertyEditor = editor.getEditor('root.data_footnote');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -818,7 +830,19 @@ data-event-label="high"
         console.log(e.message);
         console.log('Unable to set config key: data_footnote');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_geocode_regex'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_keywords'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_geocode_regex'));
+      try {
+        var currentValue = normalizeCurrentValue('data_keywords', "Unpaid care; Adult Social Care; Disability");
+        var propertyEditor = editor.getEditor('root.data_keywords');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: data_keywords');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.data_keywords'));propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -947,12 +971,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210609133652'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210610012736'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210609133652"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210610012736"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
