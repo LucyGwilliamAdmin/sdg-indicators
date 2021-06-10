@@ -1,4 +1,4 @@
-﻿accessible_charts: true
+accessible_charts: true
 accessible_tabs: true
 analytics:
   ga_prod: ''
@@ -232,7 +232,7 @@ metadata_tabs: []
 news:
   category_links: false
 non_global_metadata: ''
-remote_data_prefix: 'https://ONSdigital.github.io/sdg-data-sandpit'
+remote_data_prefix: 'https://lucygwilliamadmin.github.io/sdg-data-sandpit'
 reporting_status:
   title: Reporting Status
   description: >-
