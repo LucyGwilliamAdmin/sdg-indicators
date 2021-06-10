@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://ONSdigital.github.io/sdg-data/en',
+  remoteDataBaseUrl: 'https://lucygwilliamadmin.github.io/sdg-data-sandpit/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -138,7 +138,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610114827">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610140122">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -146,7 +146,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210610114827"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20210610140122"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
         <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
 <script>
@@ -461,6 +461,12 @@ data-event-label="high"
   
 
   
+<div class="row metadata-available-indicator">
+  <div class="col-xs-12">
+    <h2>Number of deaths attributed to disasters per 100,000 population</h2>
+  </div>
+</div>
+
 
   
 
@@ -514,9 +520,9 @@ data-event-label="high"
 
   <div id="datatables">
 
-    <a href="https://ONSdigital.github.io/sdg-data/en/headline/1-5-1.csv" class="btn btn-primary btn-download" download="indicator_1-5-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    <a href="https://lucygwilliamadmin.github.io/sdg-data-sandpit/en/headline/1-5-1.csv" class="btn btn-primary btn-download" download="indicator_1-5-1.csv" tabindex="0" role="button">Download Headline CSV</a>
 
-    <a href="https://ONSdigital.github.io/sdg-data/en/data/1-5-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_1-5-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <a href="https://lucygwilliamadmin.github.io/sdg-data-sandpit/en/data/1-5-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_1-5-1.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
@@ -2142,7 +2148,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            
+            <p>Number of deaths attributed to disasters per 100,000 population</p>
 
           
         </td>
@@ -2198,7 +2204,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            <p>Data is provided by the Nomis Mortality Statistics dataset. This dataset provides mortality statistics for England and Wales, broken down by calendar year of registration, age, sex, underlying cause of death  (classified using ICD10, the International Classification of Diseases, 10th revision) and area of usual residence of the deceased. Death statistics are compiled from information supplied when deaths are certified and registered as part of civil registration, a legal requirement. Figures represent the number of deaths registered in the calendar year. Figures represent deaths which occurred in England and Wales - these include the deaths of individuals whose usual residence was outside England and Wales.</p>
+            <p>Death - The number of people who died during the disaster, or directly after, as a direct result of the hazardous event. Missing - The number of people whose whereabouts is unknown since the hazardous event. It includes people who are presumed dead although there is no physical evidence. The data on number of deaths and number of missing are mutually exclusive. Affected - People who are affected, either directly or indirectly, by a hazardous event. Directly affected - People who have suffered injury, illness or other health effects; who were evacuated, displaced, relocated or have suffered direct damage to their livelihoods, economic, physical, social, cultural and environmental assets. Indirectly affected - People who have suffered consequences, other than or in addition to direct effects, over time due to disruption or changes in economy, critical infrastructures, basic services, commerce, work or social, health and psychological consequences. In this indicator, given the difficulties in assessing the full range of all affected (directly and indirectly), UNISDR proposes the use of an indicator that would estimate “directly affected” as a proxy for the number of affected. This indicator, while not perfect, comes from data widely available and could be used consistently across countries and over time to measure the achievement of the Target B of the Sendai Framework. [a] An open-ended intergovernmental expert working group on indicators and terminology relating to disaster risk reduction established by the General Assembly (resolution 69/284) is developing a set of indicators to measure global progress in the implementation of the Sendai Framework. These indicators will eventually reflect the agreements on the Sendai Framework indicators.</p>
 
           
         </td>
@@ -2254,25 +2260,11 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/ONSdigital/sdg-data/commit/aff030022f4b676a7c5577ad6e6157e787b619ee" target="_blank">
-                2021-06-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+            10 June 2021
           
         </td>
         </tr>
         
-      
-  
-      
-      
       
   
       
@@ -2281,25 +2273,11 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/ONSdigital/sdg-data/commit/aff030022f4b676a7c5577ad6e6157e787b619ee" target="_blank">
-                2021-06-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+            10 June 2021
           
         </td>
         </tr>
         
-      
-  
-      
-      
       
   
   
@@ -2660,8 +2638,6 @@ data-event-label="Change to Sources tab"
   
   
   
-  
-  
 </table>
 
     </article>
@@ -2680,8 +2656,6 @@ data-event-label="Change to Sources tab"
     <div class="col-md-6">
       
       <table class="table">
-  
-  
   
   
   
@@ -2785,7 +2759,7 @@ data-event-label="Change to Sources tab"
 
             
               <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/adhocs/11640numberofdeathsandcrudemortalityratesfromexposuretoforcesofnatureenglandandwales2001to2018" target="_blank">
-                Number of deaths and crude mortality rates from exposure to forces of nature, England and Wales - 2001 to 2018 <span class="visuallyhidden">opens in a new window</span>
+                Nomis - Mortality Statistics <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -3069,12 +3043,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210610114827'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210610140122'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210610114827"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210610140122"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
