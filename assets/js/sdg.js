@@ -3858,9 +3858,8 @@ var indicatorSearch = function() {
 
     var results = [];
     var alternativeSearchTerms = [];
-    var noTermsProvided = (searchTerms === '');
 
-    if (useLunr && !noTermsProvided) {
+    if (useLunr) {
       // Engish-specific tweak for words separated only by commas.
       if (opensdg.language == 'en') {
         lunr.tokenizer.separator = /[\s\-,]+/
@@ -3906,7 +3905,7 @@ var indicatorSearch = function() {
         }
       }
     }
-    else if (!noTermsProvided) {
+    else {
       // Non-Lunr basic search functionality.
       results = _.filter(opensdg.searchItems, function(item) {
         var i, match = false;
