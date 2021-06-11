@@ -181,19 +181,10 @@ input[type="checkbox"]:focus, body.contrast-high input[type="checkbox"]:focus {
 .tabPanel:focus,
 input[type="text"]:focus,
 body.contrast-high input[type="text"]:focus,
-.variable-selector button.accessBtn:focus,
 div[tabindex]:focus {
   background-color: white !important;
   box-shadow: none !important;
   outline: 3px solid #ffdd00 !important; }
-
-body.contrast-high .variable-selector button.accessBtn:focus {
-  background-color: black !important;
-  box-shadow: none !important;
-  outline: 3px solid #ffdd00 !important;
-  color: white !important; }
-  body.contrast-high .variable-selector button.accessBtn:focus, body.contrast-high .variable-selector button.accessBtn:focus span {
-    color: white !important; }
 
 body.contrast-high div[tabindex]:focus {
   background-color: black !important;
@@ -930,6 +921,10 @@ footer #footerLinks .language-toggle-menu-footer {
     border-radius: 5px; }
     #main-content #map .disaggregation-select-container label {
       margin-right: 4px; }
+  @media only screen and (max-width: 480px) {
+    #main-content #map .leaflet-control-attribution {
+      max-width: 100px;
+      text-align: right; } }
   #main-content #map .selection-legend {
     background-color: rgba(150, 150, 150, 0.6);
     padding: 0;
@@ -1715,9 +1710,7 @@ footer {
     background: #ccc; }
 #main-content #toolbar .accessBtn {
   padding: 0px !important;
-  border: 1px solid transparent; }
-  #main-content #toolbar .accessBtn:focus {
-    border: 1px solid #555; }
+  border: none; }
 #main-content #toolbar > p {
   font-size: 96%; }
 #main-content #fields {
