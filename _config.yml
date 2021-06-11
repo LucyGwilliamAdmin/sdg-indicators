@@ -8,7 +8,7 @@ baseurl: "/sdg-indicators"
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
 # Recommended: set this to a particular "release" of Open SDG. For example:
-remote_theme: brockfanning/open-sdg@leaflet-map-zoom-issues
+remote_theme: brockfanning/open-sdg@map-search-listbox-accessibility
 # Replace this title as needed.
 title: U.K. Indicators For The Sustainable Development Goals
 url: ""
