@@ -2502,8 +2502,7 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
       position: absolute;
       right: 0;
       top: 0;
-      margin-top: 0;
-      width: min-content; } }
+      margin-top: 0; } }
 .layout-goal-by-target-vertical .target-number, .layout-goal-by-target-vertical .target-name, .layout-goal-by-target-vertical .indicator-number, .layout-goal-by-target-vertical .indicator-name {
   display: block; }
 .layout-goal-by-target-vertical .target-number, .layout-goal-by-target-vertical .indicator-number {
