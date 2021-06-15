@@ -181,10 +181,19 @@ input[type="checkbox"]:focus, body.contrast-high input[type="checkbox"]:focus {
 .tabPanel:focus,
 input[type="text"]:focus,
 body.contrast-high input[type="text"]:focus,
+.variable-selector button.accessBtn:focus,
 div[tabindex]:focus {
   background-color: white !important;
   box-shadow: none !important;
   outline: 3px solid #ffdd00 !important; }
+
+body.contrast-high .variable-selector button.accessBtn:focus {
+  background-color: black !important;
+  box-shadow: none !important;
+  outline: 3px solid #ffdd00 !important;
+  color: white !important; }
+  body.contrast-high .variable-selector button.accessBtn:focus, body.contrast-high .variable-selector button.accessBtn:focus span {
+    color: white !important; }
 
 body.contrast-high div[tabindex]:focus {
   background-color: black !important;
@@ -1706,7 +1715,9 @@ footer {
     background: #ccc; }
 #main-content #toolbar .accessBtn {
   padding: 0px !important;
-  border: none; }
+  border: 1px solid transparent; }
+  #main-content #toolbar .accessBtn:focus {
+    border: 1px solid #555; }
 #main-content #toolbar > p {
   font-size: 96%; }
 #main-content #fields {
@@ -1876,6 +1887,24 @@ footer {
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
       background-repeat: repeat;
       background-position: -5px 0; }
+  #main-content #legend.legend-for-line-chart .swatch {
+    height: 3px;
+    position: relative; }
+    #main-content #legend.legend-for-line-chart .swatch .swatch-inner {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      top: -4px;
+      left: 17px;
+      border-radius: 10px; }
+    #main-content #legend.legend-for-line-chart .swatch.headline {
+      height: 6px; }
+      #main-content #legend.legend-for-line-chart .swatch.headline .swatch-inner {
+        top: -3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 0; }
   #main-content #legend span {
     vertical-align: middle;
     line-height: 18px; }
@@ -2473,7 +2502,8 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
       position: absolute;
       right: 0;
       top: 0;
-      margin-top: 0; } }
+      margin-top: 0;
+      width: min-content; } }
 .layout-goal-by-target-vertical .target-number, .layout-goal-by-target-vertical .target-name, .layout-goal-by-target-vertical .indicator-number, .layout-goal-by-target-vertical .indicator-name {
   display: block; }
 .layout-goal-by-target-vertical .target-number, .layout-goal-by-target-vertical .indicator-number {
