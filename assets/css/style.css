@@ -28,6 +28,33 @@ body {
 ul {
   padding-left: 2rem; }
 
+/**
+ * CSS rules specific to certain languages.
+ */
+.language-ar {
+  direction: rtl; }
+
+.language-km #page-content,
+.language-km #indicator-sidebar,
+.language-km #indicator-main,
+.language-km #main-content,
+.language-km .goal-banner,
+.language-lo #page-content,
+.language-lo #indicator-sidebar,
+.language-lo #indicator-main,
+.language-lo #main-content,
+.language-lo .goal-banner {
+  line-break: anywhere; }
+.language-km #main-content .status-inner,
+.language-km #main-content .status,
+.language-lo #main-content .status-inner,
+.language-lo #main-content .status {
+  line-break: normal; }
+.language-km #indicator-main #national th[scope="row"], .language-km #indicator-main #global th[scope="row"],
+.language-lo #indicator-main #national th[scope="row"],
+.language-lo #indicator-main #global th[scope="row"] {
+  min-width: 100px; }
+
 .js #headlineTable {
   display: none; }
 
@@ -181,10 +208,19 @@ input[type="checkbox"]:focus, body.contrast-high input[type="checkbox"]:focus {
 .tabPanel:focus,
 input[type="text"]:focus,
 body.contrast-high input[type="text"]:focus,
+.variable-selector button.accessBtn:focus,
 div[tabindex]:focus {
   background-color: white !important;
   box-shadow: none !important;
   outline: 3px solid #ffdd00 !important; }
+
+body.contrast-high .variable-selector button.accessBtn:focus {
+  background-color: black !important;
+  box-shadow: none !important;
+  outline: 3px solid #ffdd00 !important;
+  color: white !important; }
+  body.contrast-high .variable-selector button.accessBtn:focus, body.contrast-high .variable-selector button.accessBtn:focus span {
+    color: white !important; }
 
 body.contrast-high div[tabindex]:focus {
   background-color: black !important;
@@ -665,9 +701,6 @@ body.contrast-high #zip-download-info {
 .goal-banner .goal-icon a:focus {
   outline: 6px #ffdd00 solid !important; }
 
-.language-ar {
-  direction: rtl; }
-
 .language-toggle-dropdown {
   margin-top: -2px; }
   .language-toggle-dropdown .dropdown-toggle {
@@ -921,6 +954,10 @@ footer #footerLinks .language-toggle-menu-footer {
     border-radius: 5px; }
     #main-content #map .disaggregation-select-container label {
       margin-right: 4px; }
+  @media only screen and (max-width: 480px) {
+    #main-content #map .leaflet-control-attribution {
+      max-width: 100px;
+      text-align: right; } }
   #main-content #map .selection-legend {
     background-color: rgba(150, 150, 150, 0.6);
     padding: 0;
@@ -1706,7 +1743,9 @@ footer {
     background: #ccc; }
 #main-content #toolbar .accessBtn {
   padding: 0px !important;
-  border: none; }
+  border: 1px solid transparent; }
+  #main-content #toolbar .accessBtn:focus {
+    border: 1px solid #555; }
 #main-content #toolbar > p {
   font-size: 96%; }
 #main-content #fields {
@@ -1876,6 +1915,24 @@ footer {
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
       background-repeat: repeat;
       background-position: -5px 0; }
+  #main-content #legend.legend-for-line-chart .swatch {
+    height: 3px;
+    position: relative; }
+    #main-content #legend.legend-for-line-chart .swatch .swatch-inner {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      top: -4px;
+      left: 17px;
+      border-radius: 10px; }
+    #main-content #legend.legend-for-line-chart .swatch.headline {
+      height: 6px; }
+      #main-content #legend.legend-for-line-chart .swatch.headline .swatch-inner {
+        top: -3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 0; }
   #main-content #legend span {
     vertical-align: middle;
     line-height: 18px; }
